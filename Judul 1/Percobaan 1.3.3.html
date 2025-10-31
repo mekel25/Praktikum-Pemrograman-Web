@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengenalan CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 10px;
+        }
+.highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+        
+        #special {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Belajar CSS</h1>
+        
+        <p>CSS adalah bahasa yang digunakan untuk <span class="highlight">styling halaman web</span>.</p>
+        
+        <p id="special">Paragraf ini memiliki ID special dengan styling khusus.</p>
+        
+        <p style="color: blue; font-size: 18px;">Ini adalah contoh inline CSS.</p>
+        
+        <h2>Jenis Selector CSS:</h2>
+        <ul>
+            <li>Type Selector (tag)</li>
+            <li class="highlight">Class Selector (.class)</li>
+            <li>ID Selector (#id)</li>
+        </ul>
+    </div>
+</body>
+</html>
