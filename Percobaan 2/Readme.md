@@ -5,12 +5,11 @@ Perkanalkan Saya Michael Deffrans Cristian NPM : 2315061087 Kelompok Praktikum :
 Ini merupakan Tugas Akhir Praktikum Pemrograman Web judul 2 :
 
 <h2>Website Profile ini merupakan Website Protofilo sederhana dari Diri saya sendiri yang mencakup : </h2>
-<li>
-1. Header (profile) : Berisikan Foto, Nama dan Info Kontak, dll
-2. Proyek Saya : Daftar proyek yang pernah saya lakukan / buat
-3. Pengalaman Organisasi : Daftar organisasi yang pernah saya ikuti selama berkuliah.
-4. Prestasi : Daftar prestasi yang pernah saya raih.
-</li>
+
+<li> 1. Header (profile) : Berisikan Foto, Nama dan Info Kontak, dll </li>
+<li> 2. Proyek Saya : Daftar proyek yang pernah saya lakukan / buat </li>
+<li> 3. Pengalaman Organisasi : Daftar organisasi yang pernah saya ikuti selama berkuliah. </li>
+<li> 4. Prestasi : Daftar prestasi yang pernah saya raih. </li>
   <hr>
 
 Pada tugas akhir kali ini saya menggunakan beberapa perintah yaitu : 
@@ -23,3 +22,4 @@ Pada tugas akhir kali ini saya menggunakan beberapa perintah yaitu :
 
 
 Sekian Terimakasih
+
