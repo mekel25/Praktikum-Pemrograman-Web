@@ -19,9 +19,10 @@ Pada tugas akhir kali ini saya menggunakan beberapa perintah yaitu :
 4. git branch #nama branch# , git checkout #nama branch# : untuk menambahkan dan pindah ke branch yang sudah dibuat 
 5. git merge : untuk menyatukan perubahan dari branch lain ke branch 'master'. 
 
-![Hasil Perintah Git Log](Percobaan 2/SS git Log.png)
+![Hasil Perintah Git Log](SS%20git%20Log.png)
 
 Sekian Terimakasih
+
 
 
 
