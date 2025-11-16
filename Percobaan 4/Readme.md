@@ -1,5 +1,5 @@
 Perkenalkan saya Michael Deffrans Cristian <hr>
-Dari Kelompok PPW - D
+Kelompok : PPW - D
 --
 Tugas Akhir percobaan judul 4 kali ini merupakan implementasi penggunaan PHP sebagai bahasa server-side scripting, manipulasi form, validasi, dan manajemen state menggunakan **PHP Session**.
 
@@ -19,4 +19,5 @@ Aplikasi ini adalah Sistem Manajemen Kontak Sederhana yang menyimpan data secara
 | **`hapus.php`** | **Hapus Kontak (Delete)** | Berfungsi sebagai *endpoint* (titik akhir) untuk menghapus kontak. Mengambil ID kontak melalui parameter GET dan menghapusnya dari `$_SESSION['kontak']` menggunakan `unset()`, kemudian diarahkan kembali ke `index.php`. |
 
 ---
+
 
