@@ -4,21 +4,15 @@ let operator = null;
 let waitingForSecondOperand = false; 
 let memoryValue = 0; 
 
-// Advanced Feature: History
 let calculationHistory = []; 
 const MAX_HISTORY = 5; 
 
-// DOM Elements
 const resultDisplay = document.getElementById('result');
 const historyDisplay = document.getElementById('history');
 
-/**
- * Memperbarui tampilan hasil dan riwayat perhitungan.
- */
 function updateDisplay() {
     resultDisplay.innerText = currentInput;
     
-    // Menampilkan operan pertama dan operator jika sedang menunggu operan kedua
     if (waitingForSecondOperand && firstOperand !== null) {
         historyDisplay.innerText = `${firstOperand} ${operator}`;
     } else if (firstOperand !== null && operator !== null) {
@@ -28,9 +22,6 @@ function updateDisplay() {
     }
 }
 
-/**
- * Menambahkan angka ke currentInput.
- */
 function appendNumber(number) {
     if (currentInput.length >= 15 && !waitingForSecondOperand) return;
 
@@ -38,7 +29,6 @@ function appendNumber(number) {
         currentInput = number;
         waitingForSecondOperand = false;
     } else {
-        // Mencegah input '0' berulang di awal atau saat Error
         if (currentInput === '0' || currentInput.includes('Error')) {
             currentInput = number;
         } else {
@@ -48,9 +38,6 @@ function appendNumber(number) {
     updateDisplay();
 }
 
-/**
- * Menambahkan titik desimal.
- */
 function appendDecimal() {
     if (currentInput.includes('Error')) {
         currentInput = '0.';
@@ -71,9 +58,6 @@ function appendDecimal() {
     updateDisplay();
 }
 
-/**
- * Mengatur operator dan menangani perhitungan berantai.
- */
 function setOperator(nextOperator) {
     const inputValue = parseFloat(currentInput);
 
@@ -99,9 +83,6 @@ function setOperator(nextOperator) {
     updateDisplay();
 }
 
-/**
- * Melakukan perhitungan aritmatika dasar.
- */
 function calculate() {
     if (operator === null || waitingForSecondOperand) {
         return;
@@ -113,7 +94,6 @@ function calculate() {
     let result = 0;
     let calculationString = `${val1} ${operator} ${val2}`;
     
-    // Penanganan Pembagian dengan Nol
     if (operator === '/' && val2 === 0) {
         currentInput = 'Error: Dibagi 0'; 
         operator = null;
@@ -130,10 +110,8 @@ function calculate() {
         default: return;
     }
 
-    // Simpan ke History
     addToHistory(calculationString, result); 
     
-    // Pembulatan
     result = parseFloat(result.toFixed(10)); 
 
     currentInput = result.toString();
@@ -142,9 +120,6 @@ function calculate() {
     waitingForSecondOperand = false;
     updateDisplay();
 }
-
-
-// --- Functionality: Clear & Backspace ---
 
 function clearAll() {
     currentInput = '0';
@@ -175,9 +150,6 @@ function backspace() {
     updateDisplay();
 }
 
-
-// --- Advanced Feature: Memory Functions ---
-
 function memoryPlus() {
     if (currentInput.includes('Error')) return;
     memoryValue += parseFloat(currentInput);
@@ -200,9 +172,6 @@ function memoryClear() {
     memoryValue = 0;
     updateDisplay();
 }
-
-
-// --- Advanced Feature: History ---
 
 function addToHistory(calculation, result) {
     const time = new Date().toLocaleTimeString();
@@ -229,7 +198,6 @@ function showHistory() {
         calculationHistory.forEach((item, index) => {
             const listItem = document.createElement('li');
             
-            // PENTING: Tambahkan onclick untuk memanggil kembali hasil
             listItem.setAttribute('onclick', `useHistoryResult(${index})`);
             listItem.classList.add('history-item-clickable'); 
             
@@ -241,10 +209,6 @@ function showHistory() {
     modal.style.display = 'block';
 }
 
-/**
- * Mengambil hasil dari riwayat perhitungan yang diklik dan memasukkannya ke kalkulator.
- * @param {number} index - Index dari item di array calculationHistory.
- */
 function useHistoryResult(index) {
     if (index >= 0 && index < calculationHistory.length) {
         const resultToUse = calculationHistory[index].res;
@@ -269,9 +233,6 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
-
-
-// --- Advanced Feature: Keyboard Support ---
 
 window.addEventListener('keydown', function(event) {
     const key = event.key;
