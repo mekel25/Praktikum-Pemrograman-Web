@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Interaktif Cerdas</title>
+    <link rel="stylesheet" href="Kalkulator.css"> 
+</head>
+<body>
+    <div class="header-text">KALKULATOR CERDAS</div>
+    
+    <div class="calculator-app">
+        <div class="display">
+            <div id="history"></div>
+            <div id="result">0</div>
+        </div>
+        
+        <div class="buttons-grid">
+            
+            <button class="func" onclick="clearAll()">C</button>
+            <button class="func" onclick="clearEntry()">CE</button>
+            <button class="func" onclick="showHistory()">Hist</button>
+            <button class="mem" onclick="memoryPlus()">M+</button>
+
+            <button class="mem" onclick="memoryClear()">MC</button>
+            <button class="mem" onclick="memoryRecall()">MR</button>
+            <button class="mem" onclick="memoryMinus()">M-</button>
+            <button class="op" onclick="setOperator('/')">÷</button>
+
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button class="op" onclick="setOperator('*')">×</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="op" onclick="setOperator('-')">-</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button class="op" onclick="setOperator('+')">+</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendDecimal('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button class="func" onclick="backspace()">←</button>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeHistory()">×</span>
+            <h3>Riwayat Perhitungan (Max 5)</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    <script src="Kalkulator.js"></script>
+</body>
+</html>
