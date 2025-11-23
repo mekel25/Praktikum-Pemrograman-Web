@@ -1,7 +1,6 @@
 /* Styling Dasar dan Background */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Background Gradasi Biru Muda dan Putih */
     background: linear-gradient(to bottom, #e0f7fa 0%, #ffffff 100%); 
     min-height: 100vh;
     margin: 0;
@@ -59,7 +58,7 @@ body {
 }
 
 .buttons-grid button {
-    padding: 15px 0; /* Padding disesuaikan untuk 6 baris */
+    padding: 15px 0;
     font-size: 1.2em;
     border: none;
     cursor: pointer;
@@ -70,7 +69,7 @@ body {
 /* Warna untuk jenis tombol */
 .op { 
     background-color: #ff9500; 
-    color: black; /* Operator berwarna hitam */
+    color: black; 
     font-weight: bold;
 } 
 .func, .mem { 
