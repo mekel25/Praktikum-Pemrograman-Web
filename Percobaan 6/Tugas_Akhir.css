@@ -1,6 +1,3 @@
-/* ============================
-   GLOBAL VARIABLE & THEME
-============================ */
 :root {
     --bg-color: #f0f2f5;
     --card-bg: #ffffff;
@@ -36,9 +33,6 @@ body {
     overflow: hidden;
 }
 
-/* ============================
-   DASHBOARD LAYOUT FULLSCREEN
-============================ */
 .dashboard-container {
     display: grid;
     grid-template-columns: 260px auto;
@@ -46,9 +40,6 @@ body {
     width: 100vw;
 }
 
-/* ============================
-           SIDEBAR
-============================ */
 .sidebar {
     background: var(--sidebar-bg);
     padding: 25px;
@@ -100,15 +91,11 @@ copyright {
     color: var(--text-secondary);
 }
 
-/* ============================
-         MAIN CONTENT
-============================ */
 .main-content {
     padding: 25px;
     overflow-y: auto;
 }
 
-/* --- Search Box --- */
 .search-section {
     margin-bottom: 20px;
 }
@@ -144,18 +131,12 @@ copyright {
     opacity: 0.85;
 }
 
-/* ============================
-          DASHBOARD GRID
-============================ */
 .dashboard-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 25px;
 }
 
-/* ============================
-      CURRENT WEATHER CARD
-============================ */
 .weather-card {
     background: var(--card-bg);
     padding: 25px;
@@ -169,16 +150,6 @@ copyright {
     align-items: center;
 }
 
-/* ❤️ TOMBOL FAVORIT BARU */
-#save-favorite-btn {
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-/* Heart outline (default) */
 #save-favorite-btn {
     background: none;
     border: none;
@@ -228,9 +199,6 @@ copyright {
     align-items: center;
 }
 
-/* ============================
-          RIGHT PANEL
-============================ */
 .panel-card {
     background: var(--card-bg);
     padding: 20px;
@@ -239,18 +207,12 @@ copyright {
     box-shadow: var(--shadow);
 }
 
-/* ============================
-          FORECAST
-============================ */
 .forecast-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
 }
 
-/* ============================
-         FAVORITES CRUD
-============================ */
 .fav-item {
     background: var(--bg-color);
     padding: 12px;
@@ -286,11 +248,7 @@ copyright {
     display: none !important;
 }
 
-/* ============================
-        RESPONSIVE
-============================ */
 @media (max-width: 900px) {
-
     .dashboard-container {
         grid-template-columns: 1fr;
     }
