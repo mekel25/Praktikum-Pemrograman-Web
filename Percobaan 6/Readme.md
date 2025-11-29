@@ -1,4 +1,4 @@
-# 🌦️ Weather Dashboard
+# 🌦️ Stasiun Cuaca Mikel
 
 Dashboard cuaca sederhana yang menampilkan informasi cuaca real-time, prakiraan cuaca, dan fitur menyimpan kota favorit. Aplikasi ini dibangun menggunakan HTML, CSS, dan JavaScript dengan integrasi API OpenWeatherMap.
 
@@ -52,4 +52,7 @@ Semua interaksi dan data real-time diatur dari file ini.
 
 ## 🔹 4. Tampilan Web (Screenshots)
 Tambahkan screenshot tampilan website di bawah ini:
+
+![Tampilan Dashboard](https://raw.githubusercontent.com/username/repo/main/path/gambar.png)
+
 
