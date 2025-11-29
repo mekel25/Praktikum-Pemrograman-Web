@@ -1,23 +1,13 @@
-/**
- * File: script.js
- * Deskripsi: Weather Dashboard dengan Full CRUD menggunakan JSON Server & OpenWeatherMap API.
- * Author: Firman Farel Richardo
- * Konsep: Clean Code, Async/Await, Modular Functions.
- */
-
-// --- CONFIGURATION ---
 const WEATHER_API_KEY = "ffe83d710eb450d9c471aa554dccbf1d";
 const BASE_URL_WEATHER = "https://api.openweathermap.org/data/2.5";
 const BASE_URL_DB = "http://localhost:3000/favorites";
 
-// --- APP STATE ---
 let state = {
     city: "Bandar Lampung",
     units: "metric",
     currentWeatherData: null
 };
 
-// --- DOM ELEMENTS ---
 const elements = {
     cityInput: document.getElementById("city-input"),
     searchBtn: document.getElementById("search-btn"),
@@ -26,7 +16,6 @@ const elements = {
     unitToggle: document.getElementById("unit-toggle"),
     loading: document.getElementById("loading-indicator"),
 
-    // Weather Display
     cityName: document.getElementById("city-name"),
     dateTime: document.getElementById("date-time"),
     temp: document.getElementById("temperature"),
@@ -36,14 +25,9 @@ const elements = {
     wind: document.getElementById("wind-speed"),
     forecastContainer: document.getElementById("forecast-container"),
 
-    // Favorites
     favList: document.getElementById("favorites-list"),
     saveFavBtn: document.getElementById("save-favorite-btn")
 };
-
-// ==========================================
-// 1. WEATHER API LOGIC
-// ==========================================
 
 async function fetchWeather(city) {
     showLoading(true);
@@ -116,11 +100,6 @@ function renderForecast(list) {
     });
 }
 
-// ==========================================
-// 2. FAVORITES CRUD LOGIC
-// ==========================================
-
-// LOAD FAVORITES (GET)
 async function loadFavorites() {
     try {
         const res = await fetch(BASE_URL_DB);
@@ -132,7 +111,6 @@ async function loadFavorites() {
     }
 }
 
-// RENDER FAVORITES LIST
 function renderFavoritesList(favorites) {
     elements.favList.innerHTML = "";
 
@@ -165,7 +143,6 @@ function renderFavoritesList(favorites) {
     });
 }
 
-// CREATE (POST)
 async function addFavorite() {
     if (!state.currentWeatherData)
         return alert("Cari kota dulu sebelum menyimpan!");
@@ -191,7 +168,6 @@ async function addFavorite() {
     loadFavorites();
 }
 
-// UPDATE (PUT)
 window.updateFavorite = async function (id, oldNote) {
     const newNote = prompt("Edit catatan kota ini:", oldNote);
     if (newNote === null || newNote === oldNote) return;
@@ -208,7 +184,6 @@ window.updateFavorite = async function (id, oldNote) {
     loadFavorites();
 };
 
-// DELETE (DELETE)
 window.deleteFavorite = async function (id) {
     if (!confirm("Yakin hapus kota ini dari favorit?")) return;
 
@@ -217,10 +192,6 @@ window.deleteFavorite = async function (id) {
 
     updateHeartIcon(false);
 };
-
-// ==========================================
-// 3. HEART ICON & FAVORITE TOGGLE
-// ==========================================
 
 async function checkIfFavorite(cityName) {
     const res = await fetch(BASE_URL_DB);
@@ -244,7 +215,6 @@ function updateHeartIcon(isFav) {
     }
 }
 
-// ON CLICK — TOGGLE FAVORITE
 elements.saveFavBtn.addEventListener("click", async () => {
     const res = await fetch(BASE_URL_DB);
     const favorites = await res.json();
@@ -256,10 +226,6 @@ elements.saveFavBtn.addEventListener("click", async () => {
         await addFavorite();
     }
 });
-
-// ==========================================
-// 4. EVENT LISTENERS & UTILITIES
-// ==========================================
 
 function showLoading(show) {
     elements.loading.classList.toggle("hidden", !show);
@@ -290,7 +256,6 @@ elements.unitToggle.addEventListener("click", () => {
     fetchWeather(state.city);
 });
 
-// INIT APP
 document.addEventListener("DOMContentLoaded", () => {
     fetchWeather("Metro");
     loadFavorites();
