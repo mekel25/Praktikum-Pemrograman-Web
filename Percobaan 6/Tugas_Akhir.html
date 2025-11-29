@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stasiun Cuaca Mikel</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="Tugas_Akhir.css">
+</head>
+<body>
+
+    <!-- Container Utama (Grid System) -->
+    <div class="dashboard-container">
+        
+        <!-- SIDEBAR (Kiri di Desktop) -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <h1><i class="fas fa-satellite-dish"></i> Stasiun<br>Cuaca Mikel</h1>
+                <p class="subtitle">Selamat Datang di Stasiun Cuaca</p>
+            </div>
+            
+            <div class="controls">
+                <button id="theme-toggle" title="Ganti Tema"><i class="fas fa-moon"></i> Ganti Tema</button>
+                <button id="unit-toggle" title="Ganti Satuan"><i class="fas fa-thermometer-half"></i> °C / °F</button>
+            </div>
+
+            <div class="copyright">
+                <small>Developed by<br><strong>Michael Deffrans</strong><br>Teknik Informatika Unila © 2025</small>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT (Kanan di Desktop) -->
+        <main class="main-content">
+            
+            <!-- SEARCH BAR (Memanjang di atas) -->
+            <section class="search-section">
+                <div class="input-group">
+                    <input type="text" id="city-input" placeholder="Masukkan nama kota (misal: Metro)...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                    <button id="refresh-btn" title="Refresh Data"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <!-- Indikator Loading -->
+                <div id="loading-indicator" class="hidden">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            </section>
+
+            <!-- DASHBOARD GRID -->
+            <div class="dashboard-grid">
+                
+                <!-- KOLOM 1: KARTU CUACA UTAMA -->
+                <section class="weather-card current-weather">
+                    <div class="card-header">
+                        <h2 id="city-name">-</h2>
+                        <button id="save-favorite-btn" title="Simpan ke Favorit"><i class="far fa-heart"></i></button>
+                    </div>
+                    <p id="date-time" class="timestamp">-</p>
+                    
+                    <div class="weather-visual">
+                        <img id="weather-icon" src="" alt="" class="hidden">
+                        <div class="temp-display">
+                            <h3 id="temperature">--°</h3>
+                            <p id="weather-desc">-</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-water"></i>
+                            <div>
+                                <span class="label">Kelembaban</span>
+                                <span class="value"><span id="humidity">--</span>%</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <span class="label">Kecepatan Angin</span>
+                                <span class="value"><span id="wind-speed">--</span> m/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- KOLOM 2: PANEL KANAN -->
+                <div class="right-panel">
+                    
+                    <!-- Forecast 5 Hari -->
+                    <section class="panel-card forecast-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Prediksi 5 Hari</h3>
+                        <div class="forecast-grid" id="forecast-container">
+                            <!-- Data akan diisi oleh Tugas_Akhir.js -->
+                        </div>
+                    </section>
+
+                    <!-- Kota Favorit (CRUD) -->
+                    <section class="panel-card favorites-section">
+                        <h3><i class="fas fa-star"></i> Kota Tersimpan</h3>
+                        <div id="favorites-list" class="favorites-list">
+                            <!-- Data akan diisi oleh Tugas_Akhir.js -->
+                        </div>
+                    </section>
+
+                </div> <!-- End Right Panel -->
+            </div> <!-- End Dashboard Grid -->
+        </main>
+    </div>
+
+    <!-- Link ke File JavaScript (Pastikan file ini ada) -->
+    <script src="Tugas_Akhir.js"></script>
+</body>
+</html>

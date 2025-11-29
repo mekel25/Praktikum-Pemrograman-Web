@@ -1,0 +1,19 @@
+{
+  "favorites": [
+    {
+      "id": "c40c",
+      "name": "Jakarta",
+      "note": "Rumah"
+    },
+    {
+      "id": "c131",
+      "name": "Metro",
+      "note": "Catatan..."
+    },
+    {
+      "id": "a058",
+      "name": "Pontianak",
+      "note": "Catatan..."
+    }
+  ]
+}

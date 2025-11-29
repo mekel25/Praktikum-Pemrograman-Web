@@ -1,0 +1,318 @@
+/* ============================
+   GLOBAL VARIABLE & THEME
+============================ */
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --accent-color: #4a90e2;
+    --shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --sidebar-bg: #232323;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-color: #64b5f6;
+    --shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ============================
+   DASHBOARD LAYOUT FULLSCREEN
+============================ */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px auto;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ============================
+           SIDEBAR
+============================ */
+.sidebar {
+    background: var(--sidebar-bg);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
+}
+
+.logo-area h1 {
+    line-height: 1.2;
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.controls button {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.controls button:hover {
+    opacity: 0.85;
+}
+
+copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+/* ============================
+         MAIN CONTENT
+============================ */
+.main-content {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+/* --- Search Box --- */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.input-group button {
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.input-group button:hover {
+    opacity: 0.85;
+}
+
+/* ============================
+          DASHBOARD GRID
+============================ */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 25px;
+}
+
+/* ============================
+      CURRENT WEATHER CARD
+============================ */
+.weather-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ❤️ TOMBOL FAVORIT BARU */
+#save-favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Heart outline (default) */
+#save-favorite-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#save-favorite-btn i {
+    color: #e74c3c;
+}
+
+#save-favorite-btn:hover {
+    transform: scale(1.2);
+}
+
+.timestamp {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.weather-visual {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.weather-visual img {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.temp-display h3 {
+    font-size: 3.5rem;
+}
+
+.stats-grid {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stat-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ============================
+          RIGHT PANEL
+============================ */
+.panel-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* ============================
+          FORECAST
+============================ */
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+/* ============================
+         FAVORITES CRUD
+============================ */
+.fav-item {
+    background: var(--bg-color);
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.fav-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-action {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background: #f1c40f;
+}
+
+.btn-delete {
+    background: #e74c3c;
+}
+
+#loading-text {
+    display: none !important;
+}
+
+/* ============================
+        RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        width: 240px;
+        left: -260px;
+        top: 0;
+        transition: 0.4s;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
