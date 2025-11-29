@@ -53,6 +53,6 @@ Semua interaksi dan data real-time diatur dari file ini.
 ## 🔹 4. Tampilan Web (Screenshots)
 Tambahkan screenshot tampilan website di bawah ini:
 
-![Tampilan Dashboard](https://raw.githubusercontent.com/username/repo/main/path/gambar.png)
+![Tampilan Dashboard](https://github.com/mekel25/Praktikum-Pemrograman-Web/blob/main/Percobaan%206/Cuplikan%20layar%202025-11-29%20161624.png)
 
 
